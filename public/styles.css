@@ -1,0 +1,22 @@
+.app-container {
+  width: 80%;
+}
+
+.greetings {
+  display: flex;
+  flex-direction: row;
+}
+
+.farewells {
+
+}
+
+.english {
+    width: 40%;
+    margin: auto;
+}
+
+.spanish{
+  width: 40%;
+  margin: auto;
+}

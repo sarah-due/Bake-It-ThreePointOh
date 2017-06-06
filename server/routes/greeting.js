@@ -11,4 +11,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/spanish', (req, res) => {
+  let db = req.app.get('db')
+  greetingsDb.getSpanishGreetings(db)
+    .then(greetings => {
+      res.json(greetings)
+    })
+})
+
 module.exports = router

@@ -3,6 +3,12 @@ const getGreetings = (db) => {
     .select('*')
 }
 
+const getSpanishGreetings = (db) => {
+  return db('spanishGreetings')
+    .select('*')
+}
+
 module.exports = {
-  getGreetings
+  getGreetings,
+  getSpanishGreetings
 }
