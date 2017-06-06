@@ -9,14 +9,13 @@ const renderGreeting = (greeting, key) => (
 
 const Greetings = ({greetings, dispatch}) => (
   <div>
-    <button onClick={() => dispatch(getGreetings())}>Show Greetings</button>
+    <button onClick={() => dispatch(getGreetings())}>Show Greetings in English</button>
     {greetings.map(renderGreeting)}
   </div>
 )
 
 const mapStateToProps = (state) => {
-return {greetings: state.greetings}
-
+  return {greetings: state.greetings}
 }
 
 export default connect(mapStateToProps)(Greetings)

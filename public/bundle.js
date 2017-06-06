@@ -12026,6 +12026,10 @@ var _Spanish_Greetings = __webpack_require__(105);
 
 var _Spanish_Greetings2 = _interopRequireDefault(_Spanish_Greetings);
 
+var _Farewells = __webpack_require__(239);
+
+var _Farewells2 = _interopRequireDefault(_Farewells);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -12045,6 +12049,16 @@ var App = function App() {
         { className: 'spanish' },
         _react2.default.createElement(_Spanish_Greetings2.default, null)
       )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'farewells' },
+      _react2.default.createElement(
+        'div',
+        { className: 'english' },
+        _react2.default.createElement(_Farewells2.default, null)
+      ),
+      _react2.default.createElement('div', { className: 'spanish' })
     )
   );
 };
@@ -12072,11 +12086,16 @@ var _spanishGreetings = __webpack_require__(108);
 
 var _spanishGreetings2 = _interopRequireDefault(_spanishGreetings);
 
+var _farewells = __webpack_require__(237);
+
+var _farewells2 = _interopRequireDefault(_farewells);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
   greetings: _greetings2.default,
-  spanishGreetings: _spanishGreetings2.default
+  spanishGreetings: _spanishGreetings2.default,
+  farewells: _farewells2.default
 });
 
 /***/ }),
@@ -12234,7 +12253,7 @@ var Greetings = function Greetings(_ref) {
       { onClick: function onClick() {
           return dispatch((0, _greetings.getGreetings)());
         } },
-      'Show Greetings'
+      'Show Greetings in English'
     ),
     greetings.map(renderGreeting)
   );
@@ -26284,6 +26303,123 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function farewells() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'RECEIVE_FAREWELLS':
+      return [].concat(_toConsumableArray(action.farewells));
+    default:
+      return state;
+  }
+}
+
+exports.default = farewells;
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.receiveFarewells = undefined;
+exports.getFarewells = getFarewells;
+
+var _superagent = __webpack_require__(95);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var receiveFarewells = exports.receiveFarewells = function receiveFarewells(farewells) {
+  return {
+    type: 'RECEIVE_FAREWELLS',
+    farewells: farewells
+  };
+};
+
+function getFarewells() {
+  return function (dispatch) {
+    _superagent2.default.get('/api/greetings/farewells').end(function (err, res) {
+      if (err) {
+        console.log(err.message);
+        return;
+      }
+      dispatch(receiveFarewells(res.body));
+    });
+  };
+}
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(33);
+
+var _farewells = __webpack_require__(238);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var renderFarewell = function renderFarewell(farewell, key) {
+  return _react2.default.createElement(
+    'h1',
+    { key: key },
+    farewell.text
+  );
+};
+
+var Farewells = function Farewells(_ref) {
+  var farewells = _ref.farewells,
+      dispatch = _ref.dispatch;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return dispatch((0, _farewells.getFarewells)());
+        } },
+      'Show Farewells in English'
+    ),
+    farewells.map(renderFarewell)
+  );
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return { farewells: state.farewells };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Farewells);
 
 /***/ })
 /******/ ]);

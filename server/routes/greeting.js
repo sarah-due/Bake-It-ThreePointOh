@@ -3,6 +3,8 @@ var router = express.Router()
 
 var greetingsDb = require('../db/greeting')
 
+
+
 router.get('/', (req, res) => {
   let db = req.app.get('db')
   greetingsDb.getGreetings(db)
@@ -14,8 +16,16 @@ router.get('/', (req, res) => {
 router.get('/spanish', (req, res) => {
   let db = req.app.get('db')
   greetingsDb.getSpanishGreetings(db)
-    .then(greetings => {
-      res.json(greetings)
+    .then(spanishGreetings => {
+      res.json(spanishGreetings)
+    })
+})
+
+router.get('/farewells',(req, res) => {
+  let db = req.app.get('db')
+  greetingsDb.getFarewells(db)
+    .then(farewells => {
+      res.json(farewells)
     })
 })
 

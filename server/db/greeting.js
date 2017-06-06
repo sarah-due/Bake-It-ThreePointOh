@@ -8,7 +8,13 @@ const getSpanishGreetings = (db) => {
     .select('*')
 }
 
+const getFarewells = (db) => {
+  return db('farewells')
+  .select('*')
+}
+
 module.exports = {
   getGreetings,
-  getSpanishGreetings
+  getSpanishGreetings,
+  getFarewells
 }
