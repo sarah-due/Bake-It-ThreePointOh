@@ -3,6 +3,7 @@ import React from 'react'
 import Greetings from './Greetings'
 import Spanish_Greetings from './Spanish_Greetings'
 import Farewells from './Farewells'
+import Spanish_Farewells from './Spanish_Farewells'
 
 const App = () => (
   <div className='app-container'>
@@ -21,6 +22,7 @@ const App = () => (
         <Farewells />
       </div>
       <div className = "spanish">
+        <Spanish_Farewells/>
       </div>
     </div>
 

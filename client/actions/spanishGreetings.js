@@ -10,7 +10,7 @@ export const receiveSpanishGreetings = (spanishGreetings) => {
 export function getSpanishGreetings () {
   return (dispatch) => {
     request
-      .get(`/api/greetings/spanish`)
+      .get(`/api/greetings/spanishGreetings`)
       .end((err, res) => {
         if (err) {
           console.error(err.message)

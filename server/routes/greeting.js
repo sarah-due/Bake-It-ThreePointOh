@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/spanish', (req, res) => {
+router.get('/spanishGreetings', (req, res) => {
   let db = req.app.get('db')
   greetingsDb.getSpanishGreetings(db)
     .then(spanishGreetings => {
@@ -21,12 +21,21 @@ router.get('/spanish', (req, res) => {
     })
 })
 
-router.get('/farewells',(req, res) => {
+router.get('/farewells', (req, res) => {
   let db = req.app.get('db')
   greetingsDb.getFarewells(db)
     .then(farewells => {
       res.json(farewells)
     })
 })
+
+router.get('/spanishFarewells', (req, res) => {
+  let db = req.app.get('db')
+  greetingsDb.getSpanishFarewells(db)
+    .then(spanishFarewells => {
+      res.json(spanishFarewells)
+    })
+})
+
 
 module.exports = router

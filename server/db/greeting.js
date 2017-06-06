@@ -13,8 +13,15 @@ const getFarewells = (db) => {
   .select('*')
 }
 
+const getSpanishFarewells = (db) => {
+  console.log('get spanish farewells');
+  return db('spanishFarewells')
+  .select('*')
+}
+
 module.exports = {
   getGreetings,
   getSpanishGreetings,
-  getFarewells
+  getFarewells,
+  getSpanishFarewells
 }
