@@ -1,22 +1,22 @@
 import request from 'superagent'
 
-export const receiveGreetings = (greetings) => {
+export const receiveCategories = (categories) => {
   return {
-    type: 'RECEIVE_GREETINGS',
-    greetings
+    type: 'RECEIVE_CATEGORIES',
+    categories
   }
 }
 
-export function getGreetings () {
+export function getCategories () {
   return (dispatch) => {
     request
-      .get(`/api/greetings`)
+      .get(`/api/categories`)
       .end((err, res) => {
         if (err) {
           console.error(err.message)
           return
         }
-        dispatch(receiveGreetings(res.body))
+        dispatch(receiveCategories(res.body))
       })
   }
 }
