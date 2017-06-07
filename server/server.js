@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 const cors = require('cors')
 
 
-var greetings = require('./routes/greeting')
+var route = require('./routes/index')
 
 
 const corsOptions = {
@@ -20,6 +20,6 @@ server.use(cors(corsOptions))
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
-server.use('/api/greetings', greetings)
+server.use('/api', route)
 
 module.exports = server
