@@ -11152,29 +11152,29 @@ var _actions = __webpack_require__(100);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Categories = function Categories(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'h1',
-      null,
-      'Show Categories'
-    ),
-    _react2.default.createElement(
-      'p',
-      null,
-      props.categories
-    )
-  );
-};
-
 var renderCategory = function renderCategory(category, key) {
   return _react2.default.createElement(
     'h1',
     { key: key },
     category.category_name
   );
+};
+
+var Categories = function Categories(_ref) {
+  var categories = _ref.categories,
+      dispatch = _ref.dispatch;
+  return _react2.default.createElement(
+    'div',
+    null,
+    dispatch((0, _actions.getCategories)()),
+    categories.map(renderCategory)
+  )
+  // <div>
+  //   <h1>test</h1>
+  //   <button onClick={() => dispatch(getCategories())}>Show Categories</button>
+  //   {categories.map(renderCategory)}
+  // </div>
+  ;
 };
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -11231,7 +11231,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function categories() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments[1];
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
   switch (action.type) {
     case 'RECEIVE_CATEGORIES':
