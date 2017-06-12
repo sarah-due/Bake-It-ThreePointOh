@@ -3,16 +3,19 @@ import {connect} from 'react-redux'
 
 import {getCategories} from '../actions'
 
-const renderCategory = (category, key) => (
-  <h1 key={key}>{category.category_name}</h1>
+
+const Categories = (props) => (
+
+      <div>
+        <h1>Show Categories</h1>
+        <p>{props.categories}</p>
+      </div>
+
 )
 
-const Categories = ({categories, dispatch}) => (
-  <div>
-    <h1>test</h1>
-    <button onClick={() => dispatch(getCategories())}>Show Categories</button>
-    {categories.map(renderCategory)}
-  </div>
+
+const renderCategory = (category, key) => (
+  <h1 key={key}>{category.category_name}</h1>
 )
 
 const mapStateToProps = (state) => {
