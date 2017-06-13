@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {getCategories} from '../actions'
-import BakeOrNot from '../containers/BakeOrNot'
+import BakeOrNot from '../components/BakeOrNot'
 
 
 const renderCategory = (category, key) => (
