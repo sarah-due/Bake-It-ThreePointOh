@@ -6,13 +6,14 @@ var setupDb = require('./setup-db')
 
 setupDb(test,createServer)
 
-test.cb('GET /categories', t => {
-  request(t.context.app)
+test('GET /categories', t => {
+  return request(t.context.app)
     .get('/api/categories')
     .expect(200)
-    .end((err,res) => {
-      if (err) console.log(err);
-      t.is(res.body.length, 9)
-      t.end()
+    .then((result) => {
+      return new Promise((resolve, reject) => {
+        t.is(result.body.length, 9)
+        resolve()
+      })
     })
 })
