@@ -5,7 +5,7 @@ import Categories from './Categories'
 
 
   const App = () => (
-    <div className='app-container'>
+    <div className='container'>
           <Categories />
     </div>
   )
