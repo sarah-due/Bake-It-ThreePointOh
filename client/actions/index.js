@@ -7,7 +7,7 @@ export const receiveCategories = (categories) => {
   }
 }
 
-export function getCategories () {
+export function getCategories() {
   return (dispatch) => {
     request
       .get(`/api/categories`)

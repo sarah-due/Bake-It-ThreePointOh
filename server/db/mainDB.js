@@ -3,6 +3,12 @@ const getCategories = (db) => {
     .select('*')
 }
 
+const getRecipes = (db) => {
+  return db('recipes')
+    .select('*')
+}
+
 module.exports = {
-  getCategories
+  getCategories,
+  getRecipes
 }
