@@ -65,8 +65,8 @@ exports.seed = function (knex, Promise) {
         'Directions: '},
 
         {recipe_id: 22, category_id: 2201, recipe_name: 'Carrot Cake', chef_name: 'Cake', recipe_image_url: 'https://s-media-cache-ak0.pinimg.com/736x/15/9b/b6/159bb68fc66af879842cb66ac43c2741.jpg', recipe_ingredients: 'Cake', recipe_method:
-        'Directions: '},
-
+        'Directions: '}
+        
       ]);
     });
 };

@@ -12056,6 +12056,10 @@ var _Home = __webpack_require__(115);
 
 var _Home2 = _interopRequireDefault(_Home);
 
+var _RecipesByCat = __webpack_require__(275);
+
+var _RecipesByCat2 = _interopRequireDefault(_RecipesByCat);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -12071,13 +12075,14 @@ var App = function App() {
         _react2.default.createElement(
           _reactRouterDom.Link,
           { to: '/' },
-          'get baked'
+          'get baking'
         )
       ),
       _react2.default.createElement(
         'div',
         { className: 'container' },
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default })
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:category_name', component: _RecipesByCat2.default })
       ),
       _react2.default.createElement('hr', null),
       _react2.default.createElement(
@@ -12261,7 +12266,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
   return _react2.default.createElement(
     'div',
-    { className: 'container' },
+    null,
     _react2.default.createElement(_Categories2.default, null)
   );
 };
@@ -12276,7 +12281,7 @@ exports.default = Home;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(6);
@@ -12285,7 +12290,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(31);
 
-var _actions = __webpack_require__(113);
+var _reactRouterDom = __webpack_require__(99);
+
+var _categories = __webpack_require__(113);
 
 var _BakeOrNot = __webpack_require__(114);
 
@@ -12294,55 +12301,59 @@ var _BakeOrNot2 = _interopRequireDefault(_BakeOrNot);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var renderCategory = function renderCategory(category, key) {
-    return _react2.default.createElement(
-        'div',
-        { className: 'col-md-4 category_box' },
-        _react2.default.createElement('img', { className: 'cat-image', src: '' + category.image_url }),
-        _react2.default.createElement(
-            'h4',
-            { className: 'cat-header' },
-            category.category_name
-        )
-    );
+  return _react2.default.createElement(
+    'div',
+    { className: 'col-md-4 category_box' },
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/' + category.category_name },
+      _react2.default.createElement('img', { className: 'cat-image', src: '' + category.image_url }),
+      _react2.default.createElement(
+        'h4',
+        { className: 'cat-header' },
+        category.category_name
+      )
+    )
+  );
 };
 
 var Categories = function Categories(_ref) {
-    var categories = _ref.categories,
-        dispatch = _ref.dispatch;
-    return _react2.default.createElement(
-        'div',
-        { className: 'row category_list' },
-        _react2.default.createElement(
-            'div',
-            { className: 'home-banner col-md-12' },
-            _react2.default.createElement(
-                'h3',
-                { className: 'banner-content' },
-                'RECIPE OF THE WEEK'
-            )
-        ),
-        _react2.default.createElement(_BakeOrNot2.default, null),
-        _react2.default.createElement('hr', { className: 'new-hr' }),
-        _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-                'h4',
-                { className: 'category-list-header' },
-                'Recipe Categories'
-            )
-        ),
-        _react2.default.createElement(
-            'div',
-            null,
-            dispatch((0, _actions.getCategories)()),
-            categories.map(renderCategory)
-        )
-    );
+  var categories = _ref.categories,
+      dispatch = _ref.dispatch;
+  return _react2.default.createElement(
+    'div',
+    { className: 'row category_list' },
+    _react2.default.createElement(
+      'div',
+      { className: 'home-banner col-md-12' },
+      _react2.default.createElement(
+        'h3',
+        { className: 'banner-content' },
+        'RECIPE OF THE WEEK'
+      )
+    ),
+    _react2.default.createElement(_BakeOrNot2.default, null),
+    _react2.default.createElement('hr', { className: 'new-hr' }),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'h4',
+        { className: 'category-list-header' },
+        'Recipe Categories'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      dispatch((0, _categories.getCategories)()),
+      categories.map(renderCategory)
+    )
+  );
 };
 
 var mapStateToProps = function mapStateToProps(state) {
-    return { categories: state.categories };
+  return { categories: state.categories };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Categories);
@@ -12424,10 +12435,15 @@ var _categories = __webpack_require__(118);
 
 var _categories2 = _interopRequireDefault(_categories);
 
+var _recipes = __webpack_require__(273);
+
+var _recipes2 = _interopRequireDefault(_recipes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
-  categories: _categories2.default
+  categories: _categories2.default,
+  recipes: _recipes2.default
 });
 
 /***/ }),
@@ -29411,6 +29427,135 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function recipes() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  switch (action.type) {
+    case 'RECEIVE_RECIPES':
+      return [].concat(_toConsumableArray(action.recipes));
+    default:
+      return state;
+  }
+}
+
+exports.default = recipes;
+
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.receiveRecipes = undefined;
+exports.getRecipes = getRecipes;
+
+var _superagent = __webpack_require__(265);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var receiveRecipes = exports.receiveRecipes = function receiveRecipes(recipes) {
+  return {
+    type: 'RECEIVE_RECIPES',
+    recipes: recipes
+  };
+};
+
+function getRecipes() {
+  return function (dispatch) {
+    _superagent2.default.get('/api/recipes').end(function (err, res) {
+      if (err) {
+        console.error(err.message);
+        return;
+      }
+      dispatch(receiveRecipes(res.body));
+    });
+  };
+}
+
+/***/ }),
+/* 275 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(31);
+
+var _recipes = __webpack_require__(274);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var renderRecipe = function renderRecipe(recipe, key) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'col-md-4 recipe-box' },
+    _react2.default.createElement('img', { className: 'recipe-list-image', src: '' + recipe.image_url }),
+    _react2.default.createElement(
+      'h4',
+      { className: 'recipe-list-header' },
+      recipe.recipe_name
+    )
+  );
+};
+
+var RecipesByCat = function RecipesByCat(_ref) {
+  var recipes = _ref.recipes,
+      dispatch = _ref.dispatch;
+  return _react2.default.createElement(
+    'div',
+    { className: 'row category_list' },
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'h4',
+        { className: 'recipe-list-header' },
+        'Recipes'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      dispatch((0, _recipes.getRecipes)()),
+      recipes.map(renderRecipe)
+    )
+  );
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return { recipes: state.recipes };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(RecipesByCat);
 
 /***/ })
 /******/ ]);
