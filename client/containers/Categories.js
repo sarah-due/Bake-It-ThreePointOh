@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {getCategories} from '../actions/categories'
-import BakeOrNot from '../components/BakeOrNot'
 
 
 const renderCategory = (category, key) => (
@@ -18,19 +17,12 @@ const renderCategory = (category, key) => (
 const Categories = ({categories, dispatch}) => (
 
     <div className="row category_list">
-        <div className="home-banner col-md-12">
-            <h3 className="banner-content">RECIPE OF THE WEEK</h3>
-        </div>
-        <BakeOrNot />
-        <hr className= "new-hr"/>
-        <div>
-          <h4 className="category-list-header">Recipe Categories</h4>
-        </div>
-        <div>
-          {dispatch(getCategories())}
-          {categories.map(renderCategory)}
-        </div>
+      <h4 className="category-list-header">Recipe Categories</h4>
+      <div>
+        {dispatch(getCategories())}
+        {categories.map(renderCategory)}
       </div>
+    </div>
 )
 
 const mapStateToProps = (state) => {
