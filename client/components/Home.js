@@ -8,7 +8,7 @@ import Categories from '../containers/Categories'
 
 
   const Home = () => (
-    <div className='container'>
+    <div>
           <Categories />
     </div>
   )
