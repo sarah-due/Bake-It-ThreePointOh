@@ -8,7 +8,7 @@ import BakeOrNot from '../components/BakeOrNot'
 
 const renderCategory = (category, key) => (
     <div className = "col-md-4 category_box">
-      <Link to={`/${category.category_name}`}>
+      <Link to={`/${category.category_id}`}>
         <img className = "cat-image" src={`${category.image_url}`}/>
         <h4 className="cat-header">{category.category_name}</h4>
       </Link>
