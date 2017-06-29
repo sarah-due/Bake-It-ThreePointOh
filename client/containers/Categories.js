@@ -6,7 +6,7 @@ import {getCategories} from '../actions/categories'
 
 
 const renderCategory = (category, key) => (
-    <div className = "col-md-4 category_box">
+    <div className = "col-md-4 category_box" key={key}>
       <Link to={`/${category.category_id}`}>
         <img className = "cat-image" src={`${category.image_url}`}/>
         <h4 className="cat-header">{category.category_name}</h4>
@@ -20,7 +20,9 @@ const Categories = ({categories, dispatch}) => (
       <h4 className="category-list-header">Recipe Categories</h4>
       <div>
         {dispatch(getCategories())}
-        {categories.map(renderCategory)}
+        {categories.map((item, key) => {
+          return renderCategory(item, key)}
+        )}
       </div>
     </div>
 )

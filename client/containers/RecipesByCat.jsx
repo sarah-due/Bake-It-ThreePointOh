@@ -6,7 +6,7 @@ import {getRecipes} from '../actions/recipes'
 
 
 const renderRecipe = (recipe, key) => (
-    <div className = "col-md-4 recipe-box">
+    <div className = "col-md-4 recipe-box" key={key}>
         <Link to={`/recipes/${recipe.recipe_id}`}>
           <img className = "recipe-list-image" src={`${recipe.recipe_image_url}`}/>
           <h4 className="recipe-list-header">{recipe.recipe_name}</h4>
