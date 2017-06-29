@@ -5,9 +5,9 @@ exports.up = function (knex, Promise) {
     table.string('bakeshop_logo')
     table.string('bakeshop_img')
     table.string('bakeshop_url')
-    table.string('bakeshop_address')
-    table.string('bakeshop_hours')
-    table.string('bakeshop_info')
+    table.text('bakeshop_address')
+    table.text('bakeshop_hours')
+    table.text('bakeshop_info')
   })
 }
 
