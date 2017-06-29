@@ -4,12 +4,17 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import Categories from '../containers/Categories'
-
+import BakeOrNot from './BakeOrNot'
 
 
   const Home = () => (
     <div>
-          <Categories />
+      <div className="home-banner col-md-12">
+          <h3 className="banner-content">RECIPE OF THE WEEK</h3>
+      </div>
+      <BakeOrNot />
+      <hr className= "new-hr"/>
+      <Categories />
     </div>
   )
 

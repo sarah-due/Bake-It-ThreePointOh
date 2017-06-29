@@ -1,13 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {getRecipes} from '../actions/recipes'
 
 
 const renderRecipe = (recipe, key) => (
     <div className = "col-md-4 recipe-box">
-        <img className = "recipe-list-image" src={`${recipe.recipe_image_url}`}/>
-        <h4 className="recipe-list-header">{recipe.recipe_name}</h4>
+        <Link to={`/recipes/${recipe.recipe_id}`}>
+          <img className = "recipe-list-image" src={`${recipe.recipe_image_url}`}/>
+          <h4 className="recipe-list-header">{recipe.recipe_name}</h4>
+        </Link>
     </div>
 )
 
@@ -26,10 +29,8 @@ class RecipesByCat extends React.Component {
           </div>
           <div>
             {this.props.recipes.filter(recipe => {
-              console.log(catID);
                 return recipe.category_id == catID
                 }).map((item, key) => {
-                  console.log(item);
                 return renderRecipe(item, key)
                 }
               )}
