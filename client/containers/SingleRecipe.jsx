@@ -18,10 +18,10 @@ const renderSingleRecipe = (recipe, key) => (
 class SingleRecipe extends React.Component {
 
   componentDidMount () {
+    window.scrollTo(0, 0)
     this.props.dispatch(getRecipes())
   }
     render () {
-      const {recipes} = this.props
       let recipeID = this.props.match.params.recipe_id
       return (
         <div className='container'>
