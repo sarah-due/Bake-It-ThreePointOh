@@ -1,11 +1,12 @@
 {
-  "name": "boilerplate-react-webpack",
+  "name": "get-baking",
   "version": "0.1.1",
-  "description": "A webpack React starter",
-  "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
+  "description": "A recipe database",
+  "repository": "https://github.com/sarah-due/bake-it-threepointoh.git",
   "main": "server/index.js",
   "scripts": {
     "dev": "nodemon --watch server server/index & webpack --watch",
+    "knex": "knex",
     "start": "node server/index",
     "test": "ava  -v 'tests/**/*.test.js'",
     "watch": "nodemon -e js,jsx -x npm test",

@@ -21,4 +21,12 @@ router.get('/recipes', (req, res) => {
     })
 })
 
+router.get('/bakeshops', (req, res) => {
+  let db = req.app.get('db')
+  mainDB.getBakeShops(db)
+    .then(bakeshops => {
+      res.json(bakeshops)
+    })
+})
+
 module.exports = router

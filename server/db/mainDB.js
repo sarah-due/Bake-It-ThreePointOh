@@ -8,7 +8,13 @@ const getRecipes = (db) => {
     .select('*')
 }
 
+const getBakeShops = (db) => {
+  return db('bakeshops')
+    .select('*')
+}
+
 module.exports = {
   getCategories,
-  getRecipes
+  getRecipes,
+  getBakeShops
 }

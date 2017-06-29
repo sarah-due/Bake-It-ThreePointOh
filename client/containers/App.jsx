@@ -5,16 +5,19 @@ import {connect} from 'react-redux'
 
 import Home from '../components/Home'
 import RecipesByCat from './RecipesByCat'
+import SingleRecipe from './SingleRecipe'
+import RandomBakeshop from './RandomBakeshop'
 
 const App = () => {
   return (
     <Router>
       <div className = "main-body">
         <h1 className="title-header"><Link to='/'>get baking</Link></h1>
-
         <div className="container">
            <Route exact path="/" component={Home} />
            <Route exact path="/:category_id" component={RecipesByCat} />
+           <Route exact path ="/recipes/:recipe_id" component={SingleRecipe} />
+           <Route exact path="/bakeshoprandomizer/:bakeshop_id" component={RandomBakeshop} />
         </div>
         <hr/>
         <h5 className ="footer"> Copyright &copy; Dueweke Codes 2017 </h5>
