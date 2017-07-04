@@ -2,18 +2,22 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
+import GMapLocate from './GMapLocate'
 import {getBakeshops} from '../actions/bakeshops'
 
 
 const renderBakeshop = (bakeshop, key) => (
     <div className = "col-md-4 bakeshop-box">
-      {console.log(bakeshop)}
+          <h3>{bakeshop.bakeshop_name}</h3>
           <img className = "bakeshop-logo" src={`${bakeshop.bakeshop_logo}`}/>
           <img className = "bakeshop-image" src={`${bakeshop.bakeshop_img}`}/>
+          {renderMap(bakeshop)}
           <p className="bakeshop-info">{bakeshop.bakeshop_hours}</p>
           <p className="bakeshop-info">{bakeshop.bakeshop_info}</p>
     </div>
 )
+
+const renderMap = (bakeshop) =>  <GMapLocate address={bakeshop.bakeshop_address}/>
 
 class RandomBakeshop extends React.Component {
 
@@ -23,14 +27,12 @@ class RandomBakeshop extends React.Component {
   }
 
     render () {
-      let bakeshops= this.props.bakeshops
-      console.log(bakeshops);
+      let bakeshops = this.props.bakeshops
       return (
         <div>
           {bakeshops.filter(bakeshop => {
               return bakeshop.bakeshop_id == this.props.match.params.bakeshop_id
             }).map((item, key) => {
-              console.log(item);
               return renderBakeshop(item, key)
             })}
         </div>

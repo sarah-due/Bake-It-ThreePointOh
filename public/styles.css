@@ -108,7 +108,6 @@ a, a:link, a:visited, a:after, a:focus {
 
 .container {
   background-color: #eee;
-
 }
 
 .to-bake, .not-to-bake {
@@ -136,6 +135,8 @@ a, a:link, a:visited, a:after, a:focus {
 .underline {
   text-decoration: underline;
 }
+
+/*** Home Page Categories List ***/
 
 .category-list-header {
   padding: 20px 0px;
@@ -181,6 +182,9 @@ margin-top: 25px;
   height: 16em;
   width: 25em;
 }
+
+
+/*** Footer ***/
 
 .footer {
   text-align: center;
