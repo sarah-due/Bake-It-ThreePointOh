@@ -13144,10 +13144,10 @@ var App = function App() {
           'get baking'
         )
       ),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
       _react2.default.createElement(
         'div',
         { className: 'container' },
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:category_id', component: _RecipesByCat2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/recipes/:recipe_id', component: _SingleRecipe2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/bakeshoprandomizer/:bakeshop_id', component: _RandomBakeshop2.default })
@@ -13296,7 +13296,7 @@ var BakeOrNot = function (_React$Component) {
       var randomBakeshop = Math.floor(Math.random() * this.props.bakeshops.length) + 3301;
       return _react2.default.createElement(
         'div',
-        { className: 'row bake-or-not' },
+        { className: 'container bake-or-not' },
         _react2.default.createElement(
           'div',
           { className: 'col-md-5 to-bake' },
@@ -13454,7 +13454,7 @@ var Categories = function Categories(_ref) {
       dispatch = _ref.dispatch;
   return _react2.default.createElement(
     'div',
-    { className: 'row category_list' },
+    { className: 'container category_list' },
     _react2.default.createElement(
       'h4',
       { className: 'category-list-header' },

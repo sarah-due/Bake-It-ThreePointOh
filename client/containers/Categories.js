@@ -16,7 +16,7 @@ const renderCategory = (category, key) => (
 
 const Categories = ({categories, dispatch}) => (
 
-    <div className="row category_list">
+    <div className="container category_list">
       <h4 className="category-list-header">Recipe Categories</h4>
       <div>
         {dispatch(getCategories())}

@@ -16,7 +16,7 @@ class BakeOrNot extends React.Component {
     let randomRecipe = (Math.floor(Math.random() * this.props.recipes.length) + 1)
     let randomBakeshop = (Math.floor(Math.random() * this.props.bakeshops.length) + 3301)
     return (
-      <div className="row bake-or-not">
+      <div className="container bake-or-not">
         <div className="col-md-5 to-bake">
           <Link to={`/recipes/${randomRecipe}`}>
             <h3> I can't decide! </h3>

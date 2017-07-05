@@ -13,8 +13,8 @@ const App = () => {
     <Router>
       <div className = "main-body">
         <h1 className="title-header"><Link to='/'>get baking</Link></h1>
+        <Route exact path="/" component={Home} />
         <div className="container">
-           <Route exact path="/" component={Home} />
            <Route exact path="/:category_id" component={RecipesByCat} />
            <Route exact path ="/recipes/:recipe_id" component={SingleRecipe} />
            <Route exact path="/bakeshoprandomizer/:bakeshop_id" component={RandomBakeshop} />
