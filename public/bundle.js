@@ -13811,7 +13811,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var renderRecipe = function renderRecipe(recipe, key) {
   return _react2.default.createElement(
     'div',
-    { className: 'col-md-4 recipe-list-box', key: key },
+    { className: 'col-md-3 recipe-list-box', key: key },
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/recipes/' + recipe.recipe_id },
