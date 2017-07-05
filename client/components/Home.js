@@ -10,7 +10,7 @@ import BakeOrNot from './BakeOrNot'
   const Home = () => (
     <div>
       <div className="home-banner col-md-12">
-          <h3 className="banner-content">RECIPE OF THE WEEK</h3>
+          <Link to='/recipes/1'><h3 className="banner-content">RECIPE OF THE WEEK</h3></Link>
       </div>
       <BakeOrNot />
       <hr className= "new-hr"/>

@@ -13396,9 +13396,13 @@ var Home = function Home() {
       'div',
       { className: 'home-banner col-md-12' },
       _react2.default.createElement(
-        'h3',
-        { className: 'banner-content' },
-        'RECIPE OF THE WEEK'
+        _reactRouterDom.Link,
+        { to: '/recipes/1' },
+        _react2.default.createElement(
+          'h3',
+          { className: 'banner-content' },
+          'RECIPE OF THE WEEK'
+        )
       )
     ),
     _react2.default.createElement(_BakeOrNot2.default, null),
@@ -13911,31 +13915,36 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var renderSingleRecipe = function renderSingleRecipe(recipe, key) {
   return _react2.default.createElement(
     'div',
-    { className: 'col-md-4 recipe-box' },
+    { className: 'single-recipe-box' },
+    _react2.default.createElement('img', { className: 'single-recipe-image', src: '' + recipe.recipe_image_url }),
     _react2.default.createElement(
-      'h4',
+      'h2',
       { className: 'single-recipe-header' },
       recipe.recipe_name
     ),
-    _react2.default.createElement('img', { className: 'single-recipe-image', src: '' + recipe.recipe_image_url }),
     _react2.default.createElement(
       'p',
-      { className: 'single-recipe-byline' },
+      { className: 'single-recipe-info' },
+      'Chef: ',
       recipe.chef_name
     ),
     _react2.default.createElement(
       'p',
-      { className: 'single-recipe-byline' },
+      { className: 'single-recipe-details' },
+      'Ingredients: ',
+      _react2.default.createElement('br', null),
       recipe.recipe_ingredients
     ),
     _react2.default.createElement(
       'p',
-      { className: 'single-recipe-byline' },
+      { className: 'single-recipe-details' },
+      'Directions: ',
+      _react2.default.createElement('br', null),
       recipe.recipe_method
     ),
     _react2.default.createElement(
       'p',
-      { className: 'single-recipe-byline' },
+      { className: 'single-recipe-comments' },
       recipe.recipe_comments
     )
   );
@@ -13962,16 +13971,12 @@ var SingleRecipe = function (_React$Component) {
       var recipeID = this.props.match.params.recipe_id;
       return _react2.default.createElement(
         'div',
-        { className: 'container' },
-        _react2.default.createElement(
-          'div',
-          null,
-          this.props.recipes.filter(function (recipe) {
-            return recipe.recipe_id == recipeID;
-          }).map(function (item, key) {
-            return renderSingleRecipe(item, key);
-          })
-        )
+        null,
+        this.props.recipes.filter(function (recipe) {
+          return recipe.recipe_id == recipeID;
+        }).map(function (item, key) {
+          return renderSingleRecipe(item, key);
+        })
       );
     }
   }]);

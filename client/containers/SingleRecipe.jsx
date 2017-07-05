@@ -5,13 +5,13 @@ import {getRecipes} from '../actions/recipes'
 
 
 const renderSingleRecipe = (recipe, key) => (
-    <div className = "col-md-4 recipe-box">
-        <h4 className="single-recipe-header">{recipe.recipe_name}</h4>
+    <div className = "single-recipe-box">
         <img className = "single-recipe-image" src={`${recipe.recipe_image_url}`}/>
-        <p className="single-recipe-byline">{recipe.chef_name}</p>
-        <p className="single-recipe-byline">{recipe.recipe_ingredients}</p>
-        <p className="single-recipe-byline">{recipe.recipe_method}</p>
-        <p className="single-recipe-byline">{recipe.recipe_comments}</p>
+        <h2 className="single-recipe-header">{recipe.recipe_name}</h2>
+        <p className="single-recipe-info">Chef: {recipe.chef_name}</p>
+        <p className="single-recipe-details">Ingredients: <br/>{recipe.recipe_ingredients}</p>
+        <p className="single-recipe-details">Directions: <br/>{recipe.recipe_method}</p>
+        <p className="single-recipe-comments">{recipe.recipe_comments}</p>
     </div>
 )
 
@@ -24,7 +24,6 @@ class SingleRecipe extends React.Component {
     render () {
       let recipeID = this.props.match.params.recipe_id
       return (
-        <div className='container'>
           <div>
             {this.props.recipes.filter(recipe => {
                 return recipe.recipe_id == recipeID
@@ -33,7 +32,6 @@ class SingleRecipe extends React.Component {
                 }
               )}
           </div>
-        </div>
     )
   }
 }
