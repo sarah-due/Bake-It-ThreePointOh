@@ -269,6 +269,48 @@ a, a:link, a:visited, a:after, a:focus {
   padding-top: 3vh;
 }
 
+
+/*** Random Bakeshop Page ***/
+
+
+.bakeshop-box {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.bakeshop-intro {
+  font-family: "Bitter", "serif";
+  font-weight: bold;
+  color:#521b1d;
+  padding:8vh;
+
+}
+
+.bakeshop-logo {
+
+}
+
+.bakeshop-image {
+  height: 50vh;
+  margin-top: 10vh;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.bakeshop-details {
+  padding:3vh;
+  color:#521b1d;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.bakeshop-info {
+  color:#521b1d;
+}
+
+
+
 /**** Add Recipe Form ****/
 .recipe-form {
   display: flex;

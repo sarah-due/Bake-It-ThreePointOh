@@ -7,13 +7,14 @@ import {getBakeshops} from '../actions/bakeshops'
 
 
 const renderBakeshop = (bakeshop, key) => (
-    <div className = "col-md-4 bakeshop-box">
-          <h3>{bakeshop.bakeshop_name}</h3>
+    <div className = "bakeshop-box">
+          <h3 className='bakeshop-intro'>GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...</h3>
           <img className = "bakeshop-logo" src={`${bakeshop.bakeshop_logo}`}/>
           <img className = "bakeshop-image" src={`${bakeshop.bakeshop_img}`}/>
           {renderMap(bakeshop)}
-          <p className="bakeshop-info">{bakeshop.bakeshop_hours}</p>
-          <p className="bakeshop-info">{bakeshop.bakeshop_info}</p>
+          <p className="bakeshop-details">{bakeshop.bakeshop_info}</p>
+          <p className="bakeshop-info">Address: {bakeshop.bakeshop_address}</p>
+          <p className="bakeshop-info">Open {bakeshop.bakeshop_hours}</p>
     </div>
 )
 

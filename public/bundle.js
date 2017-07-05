@@ -13700,24 +13700,31 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var renderBakeshop = function renderBakeshop(bakeshop, key) {
   return _react2.default.createElement(
     'div',
-    { className: 'col-md-4 bakeshop-box' },
+    { className: 'bakeshop-box' },
     _react2.default.createElement(
       'h3',
-      null,
-      bakeshop.bakeshop_name
+      { className: 'bakeshop-intro' },
+      'GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...'
     ),
     _react2.default.createElement('img', { className: 'bakeshop-logo', src: '' + bakeshop.bakeshop_logo }),
     _react2.default.createElement('img', { className: 'bakeshop-image', src: '' + bakeshop.bakeshop_img }),
     renderMap(bakeshop),
     _react2.default.createElement(
       'p',
-      { className: 'bakeshop-info' },
-      bakeshop.bakeshop_hours
+      { className: 'bakeshop-details' },
+      bakeshop.bakeshop_info
     ),
     _react2.default.createElement(
       'p',
       { className: 'bakeshop-info' },
-      bakeshop.bakeshop_info
+      'Address: ',
+      bakeshop.bakeshop_address
+    ),
+    _react2.default.createElement(
+      'p',
+      { className: 'bakeshop-info' },
+      'Open ',
+      bakeshop.bakeshop_hours
     )
   );
 };
