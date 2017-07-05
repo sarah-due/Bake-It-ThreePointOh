@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {getRecipes} from '../actions/recipes'
+import {getCategories} from '../actions/categories'
 
 
 const renderRecipe = (recipe, key) => (
@@ -19,14 +20,25 @@ class RecipesByCat extends React.Component {
   componentDidMount () {
     window.scrollTo(0, 0)
     this.props.dispatch(getRecipes())
+    this.props.dispatch(getCategories())
   }
+
     render () {
       const {recipes} = this.props
       let catID = this.props.match.params.category_id
+
+      let categoryName = this.props.categories.filter(category => {
+          return category.category_id == catID
+          }).map((item, key) => {
+          return item.category_name })
+
+
+      console.log(categoryName);
+
       return (
         <div className="row category_list">
           <div>
-            <h4 className="recipe-list-header">Recipes</h4>
+            <h4 className="recipe-list-header">{categoryName}</h4>
           </div>
           <div>
             {this.props.recipes.filter(recipe => {
@@ -42,7 +54,7 @@ class RecipesByCat extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {recipes: state.recipes}
+  return {recipes: state.recipes, categories: state.categories}
 }
 
 export default connect(mapStateToProps)(RecipesByCat)

@@ -6,6 +6,7 @@ body {
 .container {
   margin: 0px;
   padding: 0px;
+  background-color: #eee;
 }
 
 a, a:link, a:visited, a:after, a:focus {
@@ -82,6 +83,11 @@ a, a:link, a:visited, a:after, a:focus {
   text-decoration: none;
 }
 
+
+
+/***** Home Page *****/
+
+
 .home-banner {
   background-image: url("http://www.harrietharcourt.com/wp-content/uploads/2017/03/Ginger-Peaches-2706.jpg");
   background-size: cover;
@@ -103,11 +109,6 @@ a, a:link, a:visited, a:after, a:focus {
   margin-top: 3em;
   left: 15%;
   width: 70%;
-}
-/***** Home Page *****/
-
-.container {
-  background-color: #eee;
 }
 
 .to-bake, .not-to-bake {
@@ -139,8 +140,7 @@ a, a:link, a:visited, a:after, a:focus {
 /*** Home Page Categories List ***/
 
 .category-list-header {
-  padding: 20px 0px;
-  padding-top: 80px;
+  padding: 8vh 0vh;
   text-align: center;
   font-family: "Bitter", "serif";
   letter-spacing: 1px;
@@ -149,22 +149,19 @@ a, a:link, a:visited, a:after, a:focus {
   opacity: 0.7;
 }
 
-.category_list {
-margin-top: 25px;
-}
-
 .category_box {
-  padding: 20px 0px;
+  padding: 3vh;
   text-align: center;
 }
 
 .cat-header {
-  padding: 10px 0px;
+  padding: 2vh 0vh;
   font-family: "Lato", "sans-serif";
   letter-spacing: 1px;
   font-size: 1.3em;
   color: #fff;
   background-color: #6e4231;
+  width: inherit;
   opacity: 0.7;
 }
 
@@ -179,8 +176,8 @@ margin-top: 25px;
 }
 
 .cat-image {
-  height: 16em;
-  width: 25em;
+  height: 35vh;
+  max-width: 100%;
 }
 
 
@@ -192,9 +189,9 @@ margin-top: 25px;
   font-size: 1em;
   color: #fff;
   font-family: "Bitter", "serif";
-  padding: 10px 0px;
-  margin-top: 70px;
-  margin: 0px;
+  padding: 3vh 0vh;
+  margin-top: 15vh;
+  margin: 0vh;
 }
 
 
@@ -206,10 +203,10 @@ margin-top: 25px;
 }
 
 .recipe-list-header {
-  padding: 5px 0px;
+  padding: 2vh 0vh;
+  text-align: center;
   font-family: "Lato", "sans-serif";
   color:#434b5b;
-  letter-spacing: 0.5px;
   font-size: 2.4em;
   font-weight: bold;
 }
