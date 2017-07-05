@@ -13787,6 +13787,8 @@ var _reactRouterDom = __webpack_require__(24);
 
 var _recipes = __webpack_require__(40);
 
+var _categories = __webpack_require__(116);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13826,6 +13828,7 @@ var RecipesByCat = function (_React$Component) {
     value: function componentDidMount() {
       window.scrollTo(0, 0);
       this.props.dispatch((0, _recipes.getRecipes)());
+      this.props.dispatch((0, _categories.getCategories)());
     }
   }, {
     key: 'render',
@@ -13833,6 +13836,15 @@ var RecipesByCat = function (_React$Component) {
       var recipes = this.props.recipes;
 
       var catID = this.props.match.params.category_id;
+
+      var categoryName = this.props.categories.filter(function (category) {
+        return category.category_id == catID;
+      }).map(function (item, key) {
+        return item.category_name;
+      });
+
+      console.log(categoryName);
+
       return _react2.default.createElement(
         'div',
         { className: 'row category_list' },
@@ -13842,7 +13854,7 @@ var RecipesByCat = function (_React$Component) {
           _react2.default.createElement(
             'h4',
             { className: 'recipe-list-header' },
-            'Recipes'
+            categoryName
           )
         ),
         _react2.default.createElement(
@@ -13862,7 +13874,7 @@ var RecipesByCat = function (_React$Component) {
 }(_react2.default.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
-  return { recipes: state.recipes };
+  return { recipes: state.recipes, categories: state.categories };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(RecipesByCat);
