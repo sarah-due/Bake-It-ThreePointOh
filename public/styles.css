@@ -198,35 +198,31 @@ a, a:link, a:visited, a:after, a:focus {
 
 /***** Recipe List Page *****/
 
-.recipe-list {
+.recipe-list-box {
   text-align: center;
 }
 
 .recipe-list-header {
-  padding: 2vh 0vh;
+  margin: 12vh 0vh;
   text-align: center;
   font-family: "Lato", "sans-serif";
-  color:#434b5b;
+  color: #434b5b;
   font-size: 2.4em;
   font-weight: bold;
 }
 
 .recipe-list-title {
-  padding: 10px 0px;
+  padding: 1vh 0vh;
   font-family: "Lato", "sans-serif";
-  letter-spacing: 0.5px;
   font-size: 1.3em;
   color: #f2f0e3;
   background-color: #757c86;
-  margin: 5px;
-}
-.recipe-list-title:hover {
-
 }
 
 .recipe-list-image {
-  height: 15em;
-  width: 17em;
+  height: 30vh;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 

@@ -7,10 +7,10 @@ import {getCategories} from '../actions/categories'
 
 
 const renderRecipe = (recipe, key) => (
-    <div className = "col-md-4 recipe-box" key={key}>
+    <div className = "col-md-4 recipe-list-box" key={key}>
         <Link to={`/recipes/${recipe.recipe_id}`}>
           <img className = "recipe-list-image" src={`${recipe.recipe_image_url}`}/>
-          <h4 className="recipe-list-header">{recipe.recipe_name}</h4>
+          <h4 className="recipe-list-title">{recipe.recipe_name}</h4>
         </Link>
     </div>
 )
