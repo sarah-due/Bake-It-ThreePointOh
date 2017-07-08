@@ -8,6 +8,16 @@ const getRecipes = (db) => {
     .select('*')
 }
 
+const addRecipe = (recipe, db) => {
+  return db('recipes').insert(recipe)
+}
+
+const getRecipeById = (recipeID, db) => {
+  return db('recipes')
+    .where('recipe_id', recipeID)
+    .first()
+}
+
 const getBakeShops = (db) => {
   return db('bakeshops')
     .select('*')
@@ -16,5 +26,7 @@ const getBakeShops = (db) => {
 module.exports = {
   getCategories,
   getRecipes,
+  addRecipe,
+  getRecipeById,
   getBakeShops
 }

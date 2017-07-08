@@ -54,25 +54,26 @@ a, a:link, a:visited, a:after, a:focus {
 }
 
 .navbar {
-  background-color: #6e4231;
-  opacity: 0.7;
+  background-color: #434b5b !important;
+  margin-bottom: 0px !important;
+  border-radius: 0 !important;
+  border: none !important;
   display: flex;
 }
-.navbar a {
+
+.navbar ul li a {
   flex-grow: 1;
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
   font-family: "Lato", "sans-serif";
   letter-spacing: 1px;
   font-size: 1.1em;
   text-align:center;
-  padding: 10px;
-  border:2px solid white;
+  border: none !important;
   opacity: 1;
 }
 
-.navbar a:hover {
-  text-decoration: none;
+.navbar ul li a:hover {
   color: #eee;
   cursor: pointer;
   opacity: 0.5;
@@ -83,6 +84,24 @@ a, a:link, a:visited, a:after, a:focus {
   text-decoration: none;
 }
 
+.navbar-inverse .navbar-toggle {
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  background-color: transparent !important;
+}
+
+div#mainNavBar {
+  border-color: #9d9d9d;
+}
+
+@media only screen and (max-width: 770px) {
+    .navbar {
+      display: block;
+    }
+}
 
 
 /***** Home Page *****/
@@ -314,40 +333,34 @@ a, a:link, a:visited, a:after, a:focus {
 /**** Add Recipe Form ****/
 .recipe-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 
-.form-header {
-  font-family: "Bitter", "serif";
-  font-size: 48px;
+.recipe-form-header {
   text-align: center;
-  padding: 30px 0px;
-  margin: 20px 0px;
+  padding-bottom: 7vh;
 }
 
 .recipe-form select {
   font-family: "Lato", "sans-serif";
-  font-size: 18px;
+  font-size: 1.2em;
+  margin: 2vh 0vh 3vh 0vh;
   width: 30em;
   height: 2em;
 }
 
-.recipe-form input {
+.recipe-form input, .recipe-form textarea {
   position: relative;
   display:block;
-  margin: 15px 0px;
+  margin: 4vh 0vh;
   font-family: "Lato", "sans-serif";
-  font-size: 18px;
+  font-size: 1.2em;
   width: 30em;
   height: 2em;
 }
 
 .recipe-form textarea {
-  position: relative;
-  display:block;
-  margin: 15px 0px;
-  font-family: "Lato", "sans-serif";
-  font-size: 18px;
-  width: 30em;
   height:10em;
 }
