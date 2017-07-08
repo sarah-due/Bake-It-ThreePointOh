@@ -55,10 +55,13 @@ a, a:link, a:visited, a:after, a:focus {
 
 .navbar {
   background-color: #6e4231;
+  margin-bottom: 0px !important;
+  border-radius: 0 !important;
   opacity: 0.7;
   display: flex;
 }
-.navbar a {
+
+.navbar ul li a {
   flex-grow: 1;
   text-decoration: none;
   color: #fff;
@@ -66,13 +69,12 @@ a, a:link, a:visited, a:after, a:focus {
   letter-spacing: 1px;
   font-size: 1.1em;
   text-align:center;
-  padding: 10px;
-  border:2px solid white;
+  border: none;
   opacity: 1;
 }
 
-.navbar a:hover {
-  text-decoration: none;
+.navbar ul li a:hover {
+  text-decoration: underline;
   color: #eee;
   cursor: pointer;
   opacity: 0.5;
@@ -82,7 +84,11 @@ a, a:link, a:visited, a:after, a:focus {
   color: #fff;
   text-decoration: none;
 }
-
+@media only screen and (max-width: 770px) {
+    .navbar {
+      display: block;
+    }
+}
 
 
 /***** Home Page *****/

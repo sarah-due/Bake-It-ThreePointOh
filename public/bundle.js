@@ -13440,47 +13440,60 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Nav = function Nav() {
   return _react2.default.createElement(
     'nav',
-    null,
+    { className: 'navbar navbar-inverse' },
     _react2.default.createElement(
       'div',
       { className: 'container-fluid' },
       _react2.default.createElement(
-        'ul',
-        { className: 'nav navbar-nav' },
+        'div',
+        { className: 'navbar-header' },
         _react2.default.createElement(
-          'li',
-          { className: 'active' },
-          _react2.default.createElement(
-            'a',
-            { href: '#', className: 'nav-item' },
-            'Home'
-          )
-        ),
+          'button',
+          { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#mainNavBar' },
+          ' \u2630\uFEFF'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'collapse navbar-collapse', id: 'mainNavBar' },
         _react2.default.createElement(
-          'li',
-          null,
+          'ul',
+          { className: 'nav navbar-nav' },
           _react2.default.createElement(
-            'a',
-            { href: '#', className: 'nav-item' },
-            'Categories'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '#', className: 'nav-item' },
+              'Home'
+            )
+          ),
           _react2.default.createElement(
-            'a',
-            { href: '#', className: 'nav-item' },
-            'All Recipes'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '#', className: 'nav-item' },
+              'Categories'
+            )
+          ),
           _react2.default.createElement(
-            'a',
-            { href: '#', className: 'nav-item' },
-            'Add Recipe'
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '#', className: 'nav-item' },
+              'All Recipes'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '#', className: 'nav-item' },
+              'Add Recipe'
+            )
           )
         )
       )
