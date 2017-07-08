@@ -20,3 +20,23 @@ export function getRecipes() {
       })
   }
 }
+
+export const addNewRecipe = (recipe) => {
+  return {
+    type: 'ADD_RECIPE',
+    org
+  }
+}
+
+export function addRecipe (recipe, callback) {
+  request
+    .post(`/api/recipes`)
+    .send(recipe)
+    .end((err, res) => {
+      if (err) {
+        console.error(err.message)
+        return
+      }
+      callback()
+    })
+}

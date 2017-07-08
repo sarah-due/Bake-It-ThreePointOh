@@ -11,7 +11,8 @@ class AddRecipe extends React.Component {
     this.state = {
       dispatch: props.dispatch,
       submitted: false,
-      message: ''
+      message: '',
+      recipe: {}
     }
   }
 
@@ -19,6 +20,7 @@ class AddRecipe extends React.Component {
     let recipe = this.state.recipe
     recipe[e.target.name] = e.target.value
     this.setState({recipe})
+    console.log(this.state.recipe);
   }
 
   handleSubmit (e) {
@@ -46,7 +48,7 @@ class AddRecipe extends React.Component {
         <h2 className='recipe-form-header'>Fill out the form below to add your recipe:</h2>
         <form className='recipe-form' onSubmit={(e) => this.handleSubmit(e)}>
           <label className="labelone" htmlFor="name"> Choose a category for your recipe:</label>
-            <select className="drop-menu" name="category_name" value="category_name" onChange={(e =>this.handleChange(e))}>
+            <select className="drop-menu" id="category_id" name="category_id" value="category_id" onChange={(e =>this.handleChange(e))}>
               {this.props.categories.map((category, key) => {
                 return <option value={category.category_id}>{category.category_name}</option> })}
              </select>

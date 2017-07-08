@@ -21,6 +21,19 @@ router.get('/recipes', (req, res) => {
     })
 })
 
+router.post('/recipes', (req, res) => {
+  let db = req.app.get('db')
+  let recipe = req.body
+  mainDB.addRecipe(recipe, db)
+    .then(response => {
+      mainDB.getRecipeById(response[0], db)
+        .then(recipe => {
+          res.json(response[0])
+        })
+    })
+})
+
+
 router.get('/bakeshops', (req, res) => {
   let db = req.app.get('db')
   mainDB.getBakeShops(db)
