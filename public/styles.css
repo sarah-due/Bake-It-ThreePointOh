@@ -331,22 +331,27 @@ div#mainNavBar {
 
 
 /**** Add Recipe Form ****/
+
 .recipe-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
+  width: 60%;
   margin: auto;
 }
 
 .recipe-form-header {
+  font-family: "Bitter", "serif";
+  color:#434b5b;
   text-align: center;
-  padding-bottom: 7vh;
+  padding-bottom: 8vh;
 }
 
 .recipe-form select {
   font-family: "Lato", "sans-serif";
   font-size: 1.2em;
-  margin: 2vh 0vh 3vh 0vh;
+  margin: 2vh auto 3vh auto;
   width: 30em;
   height: 2em;
 }
@@ -354,7 +359,7 @@ div#mainNavBar {
 .recipe-form input, .recipe-form textarea {
   position: relative;
   display:block;
-  margin: 4vh 0vh;
+  margin: 4vh auto;
   font-family: "Lato", "sans-serif";
   font-size: 1.2em;
   width: 30em;
@@ -363,4 +368,14 @@ div#mainNavBar {
 
 .recipe-form textarea {
   height:10em;
+}
+
+form label {
+  color:#6e4231;
+  margin: 0;
+}
+
+.add-recipe-button{
+  margin: auto;
+  text-align: center;
 }

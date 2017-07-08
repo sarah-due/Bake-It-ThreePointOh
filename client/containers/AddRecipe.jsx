@@ -20,7 +20,6 @@ class AddRecipe extends React.Component {
     let recipe = this.state.recipe
     recipe[e.target.name] = e.target.value
     this.setState({recipe})
-    console.log(this.state.recipe);
   }
 
   handleSubmit (e) {
@@ -65,7 +64,7 @@ class AddRecipe extends React.Component {
           <label className="labelone" htmlFor="name"> Chef's Comments: </label>
             <textarea type="text" id="recipe_comments" name='recipe_comments' onChange={(e) => this.handleChange(e)} />
           <div className="add-recipe-button">
-            <button className="btn" type='submit' id='submit' value='Submit Your Recipe'>Submit Your Recipe</button>
+            <button className="btn form-button" type='submit' id='submit' value='Submit Your Recipe'>Submit Your Recipe</button>
           </div>
         </form>
       </div>

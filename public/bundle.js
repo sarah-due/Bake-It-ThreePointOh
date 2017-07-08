@@ -13614,7 +13614,6 @@ var AddRecipe = function (_React$Component) {
       var recipe = this.state.recipe;
       recipe[e.target.name] = e.target.value;
       this.setState({ recipe: recipe });
-      console.log(this.state.recipe);
     }
   }, {
     key: 'handleSubmit',
@@ -13747,7 +13746,7 @@ var AddRecipe = function (_React$Component) {
             { className: 'add-recipe-button' },
             _react2.default.createElement(
               'button',
-              { className: 'btn', type: 'submit', id: 'submit', value: 'Submit Your Recipe' },
+              { className: 'btn form-button', type: 'submit', id: 'submit', value: 'Submit Your Recipe' },
               'Submit Your Recipe'
             )
           )
