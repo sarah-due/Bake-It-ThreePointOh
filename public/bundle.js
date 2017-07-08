@@ -13148,6 +13148,10 @@ var _reactRouterDom = __webpack_require__(24);
 
 var _reactRedux = __webpack_require__(13);
 
+var _Nav = __webpack_require__(282);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
 var _Home = __webpack_require__(118);
 
 var _Home2 = _interopRequireDefault(_Home);
@@ -13182,6 +13186,7 @@ var App = function App() {
           'get baking'
         )
       ),
+      _react2.default.createElement(_Nav2.default, null),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
       _react2.default.createElement(
         'div',
@@ -30143,6 +30148,31 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(24);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav() {
+  return _react2.default.createElement('div', null);
+};
+
+exports.default = Nav;
 
 /***/ })
 /******/ ]);
