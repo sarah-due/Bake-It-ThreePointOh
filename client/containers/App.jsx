@@ -8,6 +8,8 @@ import Home from '../components/Home'
 import RecipesByCat from './RecipesByCat'
 import SingleRecipe from './SingleRecipe'
 import RandomBakeshop from './RandomBakeshop'
+import AllRecipes from './AllRecipes'
+import AddRecipe from './AddRecipe'
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <div className="container">
            <Route exact path="/:category_id" component={RecipesByCat} />
            <Route exact path ="/recipes/:recipe_id" component={SingleRecipe} />
+           <Route exact path="/allrecipes" component={AllRecipes} />
+           <Route exact path="/addrecipe" component={AddRecipe} />
            <Route exact path="/bakeshoprandomizer/:bakeshop_id" component={RandomBakeshop} />
         </div>
         <hr/>

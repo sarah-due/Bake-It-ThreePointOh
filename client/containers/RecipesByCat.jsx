@@ -32,9 +32,6 @@ class RecipesByCat extends React.Component {
           }).map((item, key) => {
           return item.category_name })
 
-
-      console.log(categoryName);
-
       return (
         <div className="row category_list">
           <div>
