@@ -14,7 +14,7 @@ const renderBakeshop = (bakeshop, key) => (
           {renderMap(bakeshop)}
           <p className="bakeshop-details">{bakeshop.bakeshop_info}</p>
           <p className="bakeshop-info">Address: {bakeshop.bakeshop_address}</p>
-          <p className="bakeshop-info">Open {bakeshop.bakeshop_hours}</p>
+          <p className="bakeshop-info">Open: {bakeshop.bakeshop_hours}</p>
     </div>
 )
 
