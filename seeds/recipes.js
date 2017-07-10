@@ -15,10 +15,11 @@ exports.seed = function (knex, Promise) {
 
         {recipe_id: 5, category_id: 2205, recipe_name: 'Hokey Pokey', chef_name: 'Rachel', recipe_image_url: 'http://www.madefromscratch.co.nz/wp-content/uploads/2013/10/18.jpg', recipe_ingredients: '5 tablespoons white sugar, 2 tablespoons golden syrup, 1 teaspoon baking soda', recipe_method: 'Line a baking tray with baking paper and set aside. Add the sugar and golden syrup to a medium sauce pan and place over a low heat - stir constantly until the sugar dissolves. Increase the heat and bring to the boil for around two minutes - stir if needed to stop it from burning. Remove from heat and add the baking soda, stir quickly until the mixture froths up and all of the ingredients are combined. Pour onto the baking tray lined with paper - you don’t want to spread it too thin. Allow to cool until hard before breaking into pieces.', recipe_comments: "New Zealand's favourite!"},
 
-        {recipe_id: 6, category_id: 2206, recipe_name: 'Focaccia Bread', chef_name: 'Me', recipe_image_url: 'https://static1.squarespace.com/static/51ed598ee4b06aef3d5282fa/51f13f32e4b0737722a97e9b/54f06150e4b06321d3003ea1/1446131725425/Foccacia-15Feb-8949-Edit.jpg', recipe_ingredients: 'For the dough: 4 cups flour, plus extra for dusting, 1/2 cup superfine sugar, 2 teaspoons fast-rising active dry yeast, grated zest of 1 small lemon, 3 free-range eggs, 1/2 cup water, rounded 1/4 tsp salt, 150 g unsalted butter, at room temperature, cut into 3/4-inch / 2cm cubes, sunflower oil, for greasing, For the chocolate filling: Scant 1/2 cup confectioners’ sugar, 1/3 cup cocoa powder, 130 g good-quality dark chocolate, melted, 120 g unsalted butter, melted, 1 cup pecans, coarsely chopped, 2 tbsp superfine sugar, For the sugar syrup: 2/3 cup water, 1 1/4 cups superfine sugar', recipe_method: "",
+        {recipe_id: 6, category_id: 2206, recipe_name: 'Focaccia Bread', chef_name: 'Me', recipe_image_url: 'https://static1.squarespace.com/static/51ed598ee4b06aef3d5282fa/51f13f32e4b0737722a97e9b/54f06150e4b06321d3003ea1/1446131725425/Foccacia-15Feb-8949-Edit.jpg', recipe_ingredients: '', recipe_method: "",
         recipe_comments: "It's heaven."},
 
-        { recipe_id: 7, category_id: 2206, recipe_name: 'Traditional Baguettes', chef_name: "Dr. Bread", recipe_image_url: "https://s-media-cache-ak0.pinimg.com/736x/f5/95/aa/f595aafe443c1a43ec23a7167daff149.jpg", recipe_ingredients: "Bread", recipe_method: "Make bread", recipe_comments: "it's bread" },
+        { recipe_id: 7, category_id: 2206, recipe_name: 'Traditional Baguettes', chef_name: "Paul Hollywood", recipe_image_url: "https://s-media-cache-ak0.pinimg.com/736x/f5/95/aa/f595aafe443c1a43ec23a7167daff149.jpg", recipe_ingredients: "500g strong white bread flour, plus extra for dusting, 10g salt, 10g instant yeast, 370ml cool water, Olive oil for kneading", recipe_method: "1. Lightly oil a 2-3 litre square plastic container. 2. Put the flour, salt and yeast into the bowl of a mixer fitted with a dough hook (don’t put the salt directly on top of the yeast). Add three-quarters of the water and begin mixing on a slow speed. As the dough starts to come together, slowly add the remaining water, then continue to mix on a medium speed for 5-7 minutes, until you have a glossy, elastic dough. 3. Tip the dough into the prepared tub. Cover with a tea towel and leave until at least doubled in size – about 1 hour. 4. Line 2 baking trays with baking parchment or silicone paper. 5. Coat the work surface with a little olive oil, then carefully tip the dough onto it. Rather than knocking it back, handle it gently so you can keep as much air in the dough as possible. This helps to create the irregular, airy texture of a really good baguette. The dough will be wet to the touch but still lively. 6. Divide the dough into 4 or 5 pieces. Shape each piece into an oblong by flattening the dough out slightly and folding the sides into the middle. Then roll each up into a sausage – the top should be smooth with ha join running along the length of the base. Now, beginning in the middle, roll each sausage with your hands. Don’t force it out by pressing heavily.  Concentrate on the backwards and forwards movement and gently use the weight of your arms to roll out dough to the length of your oven trays. Place 2 or 3 baguettes on each baking tray. Put each tray inside a clean plastic bag and leave to prove for about 1 hour, until the dough is at least doubled in size and springs back quickly if you prod it lightly with your finger. Meanwhile, heat your oven to 220°C and put a roasting tray in the bottom to heat up. When your baguettes are risen and light, dust them lightly with flour. Then slash each one 3 times along its length on the diagonal, using a razor blade or a very sharp knife. Fill the roasting tray with hot water to create steam and put the bread into the oven. Bake for 25 minutes, or until the baguettes are golden brown and have a slight sheen. Cool on a wire rack.",
+        recipe_comments: "Who can resist a warm baguette straight from the oven?" },
 
         { recipe_id: 8, category_id: 2202, recipe_name: 'Raspberry Rhubarb Pie', chef_name: "Mrs. Pie Lady", recipe_image_url: "https://images.food52.com/FIP8cC-VAFBB0FtoRB0vkXHi708=/753x502/255f3851-9437-47bf-a595-beaa27bea4b5--RaspberryRhubarbPieBakedStyled.jpg", recipe_ingredients: "Pie", recipe_method: "Make pie", recipe_comments: "it's pie" },
 
@@ -59,43 +60,44 @@ exports.seed = function (knex, Promise) {
         },
 
         {recipe_id: 20, category_id: 2201, recipe_name: 'Caramel Cheesecake', chef_name: 'Cake', recipe_image_url: 'http://www.cheriseharper.com/wp-content/uploads/CheeseCake_0019.jpg', recipe_ingredients: 'Cake', recipe_method:
-        ''},
+        '',recipe_comments:''},
 
         {recipe_id: 21, category_id: 2201, recipe_name: 'Funfetti Cake', chef_name: 'Cake', recipe_image_url: 'http://cakemerchant.com/wp-content/uploads/Funfetti-Cake-14.jpg', recipe_ingredients: 'Cake', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 22, category_id: 2201, recipe_name: 'Carrot Cake', chef_name: 'Cake', recipe_image_url: 'https://s-media-cache-ak0.pinimg.com/736x/15/9b/b6/159bb68fc66af879842cb66ac43c2741.jpg', recipe_ingredients: 'Cake', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 23, category_id: 2202, recipe_name: 'Pecan Pie', chef_name: 'Pie', recipe_image_url: 'http://cf.bojongourmet.com/wp-content/uploads/2015/11/bourbon-sorghum-pecan-pie-gluten-free-lede.jpg', recipe_ingredients: 'Pecans', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
-        {recipe_id: 24, category_id: 2202, recipe_name: 'Rustic Stone Fruit Tart', chef_name: 'Tart', recipe_image_url: 'http://www.seriouseats.com/images/2015/09/20150919-food-styling-6.jpg', recipe_ingredients: 'Fruit', recipe_method:
-        ''},
+        {recipe_id: 24, category_id: 2202, recipe_name: 'Summer Fruit Tart', chef_name: 'David Lebovitz', recipe_image_url: 'http://davidlebovitz.com.s3.amazonaws.com/wp-content/uploads/2016/06/Frangipan-French-fruit-tart-recipe-6-640x844.jpg', recipe_ingredients: '4 ounces (115g) unsalted butter, at room temperature, 1/2 cup (100g) sugar, 2 large eggs, at room temperature, 1 cup (130g) almond flour, 2 teaspoons dark rum or 2 teaspoons vanilla extract, 1/8 teaspoon almond extract, big pinch of salt, 3 nectarines (about 12 ounces, 370g) or another stone fruit, such as plums, peaches (peeled), or apricots, 4 ounces raspberries, One prebaked 9- 10-inch (23cm) tart shell, cooled, Strained apricot jam for glazing, if desired', recipe_method:
+        "1. Preheat the oven to 375ºF (190ºC). 2. Make the frangipane by beating the butter and sugar in the bowl of a stand mixer fitted with the paddle attachment until fluffy – about 1 minute on high speed. Add the eggs one by one, stopping the mixer and scraping down the sides of the bowl after adding each. 3. Remove the bowl from the mixer and stir in the almond flour, then the rum or vanilla extract, almond extract, and salt. Spread the frangipane in the cooled tart dough. Halve the nectarines and slice them into eighths. (The slices should be about 2 1/2-inch, 6cm thick.) Press the slices into the frangipane, in concentric circles, and press the raspberries into the frangipane, in between the nectarine slices. 4. Bake for 30-35 minutes, or until the tart is golden brown across the top. Let cool, then brush lightly with apricot jam, if desired. If it’s not liquid enough to brush on, warm the jam gently in a small saucepan.",
+         recipe_comments:'You can use another stone fruit. Peaches should be peeled but don’t peel nectarines, plums, or apricots. In the winter, it can be made with poached pears. In place of the raspberries, blueberries, cherries, another bushberry can be used. It’s classic to use blanched almond flour for frangipane, but feel free to use unblanched almond flour. Hazelnut, walnut, or even pistachio flour are fine to use as well, if those are available.'},
 
         {recipe_id: 25, category_id: 2205, recipe_name: 'Vanilla Bean Marshmallows', chef_name: 'Stay Puff', recipe_image_url: 'http://img.taste.com.au/F30k2Kmy/taste/2016/11/vanilla-bean-marshmallows-88604-1.jpeg', recipe_ingredients: 'Vanilla and marshmallows', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 26, category_id: 2205, recipe_name: 'Pistachio Nougat', chef_name: 'Chef', recipe_image_url: 'https://s-media-cache-ak0.pinimg.com/originals/f2/10/2b/f2102bbebed4685f4a85e23eacae02ef.jpg', recipe_ingredients: 'Fruit and Pistachios', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 27, category_id: 2204, recipe_name: 'Classic Creme Brulee', chef_name: 'Chef Creme', recipe_image_url: 'https://static01.nyt.com/images/2016/11/15/dining/15COOKING-CREME-BRULEE1/15COOKING-CREME-BRULEE1-articleLarge.jpg', recipe_ingredients: 'Cream and Sugar', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 28, category_id: 2204, recipe_name: 'Bread Pudding', chef_name: 'Chef ', recipe_image_url: 'https://static01.nyt.com/images/2015/05/20/dining/20HIT_BREADPUDD/20HIT_BREADPUDD-superJumbo.jpg', recipe_ingredients: 'Cream and Sugar', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 29, category_id: 2208, recipe_name: 'Blueberry Semifreddo', chef_name: 'Chef ', recipe_image_url: 'https://d104wv11b7o3gc.cloudfront.net/wp-content/uploads/2015/06/coconut-cream-semifreddo-with-blueberrirs-2.jpg', recipe_ingredients: 'Cream and Sugar', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 30, category_id: 2209, recipe_name: 'Mirror Glaze', chef_name: 'Chef ', recipe_image_url: 'https://img.buzzfeed.com/buzzfeed-static/static/2017-05/22/16/campaign_images/buzzfeed-prod-fastlane-03/this-mirror-glaze-cake-is-literally-insane-2-11739-1495483324-0_dblbig.jpg', recipe_ingredients: 'Sugar', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 31, category_id: 2209, recipe_name: 'Italian Buttercream', chef_name: 'Chef ', recipe_image_url: 'https://images.food52.com/hQidB6pPqSlI3Q1kuN2PamtlLTk=/fit-in/800x0/21d71efc-e4fd-45ac-81e8-fac1cb1342b9--2013-1104_finalist_pink-peppercorn-buttercream-icing-133.jpg', recipe_ingredients: 'Sugar', recipe_method:
-        ''},
+        '', recipe_comments:''},
 
         {recipe_id: 32, category_id: 2209, recipe_name: 'Salted Caramel', chef_name: 'Chef ', recipe_image_url: 'https://static01.nyt.com/images/2015/10/12/dining/12CHOCPANCAKES3/12CHOCPANCAKES3-articleLarge.jpg', recipe_ingredients: 'Sugar', recipe_method:
-        ''}
+        '', recipe_comments:''}
 
       ]);
     });
