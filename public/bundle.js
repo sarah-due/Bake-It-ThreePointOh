@@ -14161,38 +14161,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var renderBakeshop = function renderBakeshop(bakeshop, key) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'bakeshop-box' },
-    _react2.default.createElement(
-      'h3',
-      { className: 'bakeshop-intro' },
-      'GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...'
-    ),
-    _react2.default.createElement('img', { className: 'bakeshop-logo', src: '' + bakeshop.bakeshop_logo }),
-    _react2.default.createElement('img', { className: 'bakeshop-image', src: '' + bakeshop.bakeshop_img }),
-    renderMap(bakeshop),
-    _react2.default.createElement(
-      'p',
-      { className: 'bakeshop-details' },
-      bakeshop.bakeshop_info
-    ),
-    _react2.default.createElement(
-      'p',
-      { className: 'bakeshop-info' },
-      'Address: ',
-      bakeshop.bakeshop_address
-    ),
-    _react2.default.createElement(
-      'p',
-      { className: 'bakeshop-info' },
-      'Open: ',
-      bakeshop.bakeshop_hours
-    )
-  );
-};
-
 var renderMap = function renderMap(bakeshop) {
   return _react2.default.createElement(_GMapLocate2.default, { address: bakeshop.bakeshop_address });
 };
@@ -14224,7 +14192,38 @@ var RandomBakeshop = function (_React$Component) {
         bakeshops.filter(function (bakeshop) {
           return bakeshop.bakeshop_id == _this2.props.match.params.bakeshop_id;
         }).map(function (item, key) {
-          return renderBakeshop(item, key);
+          {
+            console.log(item);
+          }
+          return _react2.default.createElement(
+            'div',
+            { className: 'bakeshop-box' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'bakeshop-intro' },
+              'GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...'
+            ),
+            _react2.default.createElement('img', { className: 'bakeshop-logo', src: item.bakeshop_logo }),
+            _react2.default.createElement('img', { className: 'bakeshop-image', src: item.bakeshop_img }),
+            renderMap({ item: item }),
+            _react2.default.createElement(
+              'p',
+              { className: 'bakeshop-details' },
+              item.bakeshop_info
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'bakeshop-info' },
+              'Address: ',
+              item.bakeshop_address
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'bakeshop-info' },
+              'Open: ',
+              item.bakeshop_hours
+            )
+          );
         })
       );
     }

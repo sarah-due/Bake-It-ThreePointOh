@@ -6,18 +6,6 @@ import GMapLocate from './GMapLocate'
 import {getBakeshops} from '../actions/bakeshops'
 
 
-const renderBakeshop = (bakeshop, key) => (
-    <div className = "bakeshop-box">
-          <h3 className='bakeshop-intro'>GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...</h3>
-          <img className = "bakeshop-logo" src={`${bakeshop.bakeshop_logo}`}/>
-          <img className = "bakeshop-image" src={`${bakeshop.bakeshop_img}`}/>
-          {renderMap(bakeshop)}
-          <p className="bakeshop-details">{bakeshop.bakeshop_info}</p>
-          <p className="bakeshop-info">Address: {bakeshop.bakeshop_address}</p>
-          <p className="bakeshop-info">Open: {bakeshop.bakeshop_hours}</p>
-    </div>
-)
-
 const renderMap = (bakeshop) =>  <GMapLocate address={bakeshop.bakeshop_address}/>
 
 class RandomBakeshop extends React.Component {
@@ -34,7 +22,18 @@ class RandomBakeshop extends React.Component {
           {bakeshops.filter(bakeshop => {
               return bakeshop.bakeshop_id == this.props.match.params.bakeshop_id
             }).map((item, key) => {
-              return renderBakeshop(item, key)
+              {console.log(item)}
+              return (
+                <div className = "bakeshop-box">
+                      <h3 className='bakeshop-intro'>GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...</h3>
+                      <img className = "bakeshop-logo" src={item.bakeshop_logo}/>
+                      <img className = "bakeshop-image" src={item.bakeshop_img}/>
+                      {renderMap({item})}
+                      <p className="bakeshop-details">{item.bakeshop_info}</p>
+                      <p className="bakeshop-info">Address: {item.bakeshop_address}</p>
+                      <p className="bakeshop-info">Open: {item.bakeshop_hours}</p>
+                </div>
+              )
             })}
         </div>
       )}
