@@ -14203,7 +14203,11 @@ var RandomBakeshop = function (_React$Component) {
               { className: 'bakeshop-intro' },
               'GRAB YOUR WALLET AND YOUR FAT PANTS AND HEAD ON DOWN TO...'
             ),
-            _react2.default.createElement('img', { className: 'bakeshop-logo', src: item.bakeshop_logo }),
+            _react2.default.createElement(
+              'a',
+              { href: item.bakeshop_url, target: '_blank' },
+              _react2.default.createElement('img', { className: 'bakeshop-logo', src: item.bakeshop_logo })
+            ),
             _react2.default.createElement('img', { className: 'bakeshop-image', src: item.bakeshop_img }),
             renderMap({ item: item }),
             _react2.default.createElement(
