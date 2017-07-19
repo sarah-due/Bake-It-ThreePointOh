@@ -359,7 +359,7 @@ max-width: 100%;
 .recipe-form input, .recipe-form textarea {
   position: relative;
   display:block;
-  margin: 4vh auto;
+  margin: 3vh auto;
   font-family: "Lato", "sans-serif";
   font-size: 1.2em;
   width: 30em;
@@ -370,12 +370,13 @@ max-width: 100%;
   height:10em;
 }
 
-form label {
+.labelone {
   color:#6e4231;
-  margin: 0;
+  padding: 0vh 5vh;
+  margin: 0vh;
 }
 
-.add-recipe-button{
+.add-recipe-button {
   margin: auto;
   text-align: center;
 }
