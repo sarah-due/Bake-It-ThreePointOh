@@ -1,31 +1,51 @@
+## Bake-It-ThreePointOh
+
+A recipe database and bakery finder for Wellington, NZ.
 
 
-#### Creating your app
+## Steps for Installing:
 
-Create your app with `heroku create [name]`
+1. `git clone https://github.com/sarah-due/Bake-It-ThreePointOh.git`
+2. `cd Bake-It-ThreePointOh`
+3. `npm install`
+4. `npm run knex migrate:latest`
+5. `npm run knex seed:run`
+6. `npm run test`
 
-You can check that this was successful by running `heroku apps` to view a list of your apps
+## Viewing App on Local Host
+
+Run `npm run dev` and view app on http://localhost:3000/
 
 
-#### Adding postgres
+## TECHNOLOGIES
+* HTML
+* CSS
+* React
+* Redux
+* Express
+* Knex
+* React Router
+
+# Creating App on Heroku
+
+Create your app with `heroku create [name]`.
+
+You can check that this was successful by running `heroku apps` to view a list of your apps.
+
+
+# Adding postgres
 
 Add postgresql (hobby dev) to your app at `https://dashboard.heroku.com/apps/[APP NAME HERE]/resources`
 
-Check that pg has been added by running `heroku addons` to ensure the postgresql db is on your app
+This will enable heroku to access knex database.
+
+Check that pg has been added by running `heroku addons` to ensure the postgresql db is on your app.
 
 
-### Deploying!
+# Deploying!
 
-I have created several npm scripts that will be useful for deploying your app to heroku easily.
+`npm run h:deploy` will push your local master branch to heroku app.
 
-`npm run h:deploy` will push your local master branch to your heroku app
+`npm run h:migrate` will run your knex migrations on deployed heroku app.
 
-`npm run h:migrate` will run your knex migrations on your deployed heroku app
-
-`npm run h:seed` will run your seeds on your deployed app
-
-If ever you need to rollback, you can also just use `npm run h:rollback`
-
-
-## Ta-Da!
-Your app should be deployed!
+`npm run h:seed` will run seeds on deployed app.

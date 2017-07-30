@@ -25,7 +25,7 @@ test('GET /recipes', t => {
     .expect(200)
     .then((result) => {
       return new Promise((resolve, reject) => {
-        t.is(result.body.length, 22)
+        t.is(result.body.length, 32)
         t.is(result.body[0].recipe_id, 1)
         resolve()
       })
@@ -38,7 +38,7 @@ test('GET /bakeshops', t => {
     .expect(200)
     .then((result) => {
       return new Promise((resolve, reject) => {
-        t.is(result.body.length, 2)
+        t.is(result.body.length, 4)
         t.is(result.body[0].bakeshop_name, 'Leeds Street Bakery')
         resolve()
       })
